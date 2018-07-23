@@ -8,3 +8,15 @@ theme = "hugo-sam-theme"
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[[params.mainMenu]]
+    link = "/posts"
+    text = "writing"
+
+[[params.mainMenu]]
+    link = "/gallery"
+    text = "gallery"
+
+[[params.mainMenu]]
+    link = "/about"
+    text = "who is jason?"
