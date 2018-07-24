@@ -7,10 +7,10 @@ tags: ["classic","poem"]
 ---
 
 Read:
-* Beyond Religion
-* Atlas Shrugged
-* Biography of Benjamin Franklin
-* Man's Search for Meaning
+1. Beyond Religion
+2. Atlas Shrugged
+3. Biography of Benjamin Franklin
+4. Man's Search for Meaning
 
 To Read:
-* Finnegan's Wake
+1. Finnegan's Wake
