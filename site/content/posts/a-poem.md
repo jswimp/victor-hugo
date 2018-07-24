@@ -1,9 +1,9 @@
 ---
 title: "Reading List"
-date: 2018-07-24T12:35:11-05:00
+date: 2018-07-0412:35:11-05:00
 showDate: true
 draft: false
-tags: ["classic","books"]
+tags: ["classic","poem"]
 ---
 
 - Read:
