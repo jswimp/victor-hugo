@@ -1,9 +1,9 @@
 ---
 title: "Reading List"
-date: 2018-02-01T12:35:11-05:00
+date: 2018-07-24T12:35:11-05:00
 showDate: true
 draft: false
-tags: ["classic","poem"]
+tags: ["classic","books"]
 ---
 
 - Read:
@@ -15,4 +15,3 @@ tags: ["classic","poem"]
 - To Read:
     * Finnegan's Wake
 
-    
