@@ -6,11 +6,13 @@ draft: false
 tags: ["classic","poem"]
 ---
 
-Read:
-1. Beyond Religion
-2. Atlas Shrugged
-3. Biography of Benjamin Franklin
-4. Man's Search for Meaning
+- Read:
+    * Beyond Religion
+    * Atlas Shrugged
+    * Biography of Benjamin Franklin
+    * Man's Search for Meaning
 
-To Read:
-1. Finnegan's Wake
+- To Read:
+    * Finnegan's Wake
+
+    
