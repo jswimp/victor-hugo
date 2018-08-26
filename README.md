@@ -1,129 +1,66 @@
-# Victor Hugo
+# jwblog / victor hugo - OLD
 
-**A Hugo boilerplate for creating truly epic websites**
+**THIS BLOG IS DEPRECATED AS OF AUGUST 26 2018**
 
-This is a boilerplate for using [Hugo](https://gohugo.io/) as a static site generator and [Gulp](https://gulpjs.com/) + [Webpack](https://webpack.js.org/) as your asset pipeline.
+For **editing** go to the Netlify CMS instance at:
 
-Victor Hugo setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript compiling/transpiling.
+  - **[✨`https://confident-hugle-ee754d.netlify.com/admin/#/collections/post`](https://confident-hugle-ee754d.netlify.com/admin/#/collections/post)**
+  - Your account is connected to your email address used with the Netlify auth and a password chosen via email response link
 
-This project is released under the [MIT license](LICENSE). Please make sure you understand its implications and guarantees.
+Source code is now stored in the `src` repo in the **jswimp** GitHub account:
 
-## Usage
+  - **[`https://github.com/jswimp/src`](https://github.com/jswimp/src)**
+ 
 
-### Prerequisites
+# Gatsby + Netlify CMS Starter
 
-You need to have the latest/LTS [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) versions installed in order to use Victor Hugo.
+This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
 
-Next step, clone this repository and run:
+It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
 
-```bash
-npm install
+## Prerequisites
+
+- Node (I recommend using v8.2.0 or higher)
+- [Gatsby CLI](https://www.gatsbyjs.org/docs/)
+
+## Getting Started (Recommended)
+
+Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/AustinGreen/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
+
+### Access Locally
+```
+$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
+$ cd [REPO_NAME]
+$ yarn
+$ npm run develop
+```
+To test the CMS locally, you'll need run a production build of the site:
+```
+$ npm run build
+$ npm run serve
 ```
 
-This will take some time and will install all packages necessary to run Victor Hugo and its tasks.
-
-### Development
-
-While developing your website, use:
-
-```bash
-npm start
+## Getting Started (Without Netlify)
+```
+$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/AustinGreen/gatsby-starter-netlify-cms/
+$ cd [SITE_DIRECTORY_NAME]
+$ npm run build
+$ npm run serve
 ```
 
-or
+### Setting up the CMS
+Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
 
-```bash
-gulp server
+## Debugging
+Windows users might encounter ```node-gyp``` errors when trying to npm install.
+To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
+```
+npm config set python python2.7
+npm install --global --production windows-build-tools
 ```
 
-or for developing your website with `hugo server --buildDrafts --buildFuture`, use:
-
-```bash
-npm run start-preview
-```
-
-or
-
-```bash
-gulp server-preview
-```
-
-Then visit http://localhost:3000/ *- or a new browser windows popped-up already -* to preview your new website. BrowserSync will automatically reload the CSS or refresh the whole page, when stylesheets or content changes.
-
-### Static build
-
-To build a static version of the website inside the `/dist` folder, run:
-
-```bash
-npm run build
-```
-
-To get a preview of posts or articles not yet published, run:
-
-```bash
-npm run build-preview
-```
-
-See [package.json](package.json#L7) or the included gulp file for all tasks.
-
-## Structure
-
-```
-|--site                // Everything in here will be built with hugo
-|  |--content          // Pages and collections - ask if you need extra pages
-|  |--data             // YAML data files with any data for use in examples
-|  |--layouts          // This is where all templates go
-|  |  |--partials      // This is where includes live
-|  |  |--index.html    // The index page
-|  |--static           // Files in here ends up in the public folder
-|--src                 // Files that will pass through the asset pipeline
-|  |--css              // CSS files in the root of this folder will end up in /css/...
-|  |--js               // app.js will be compiled to /app.js with babel
-```
-
-## Basic Concepts
-
-You can read more about Hugo's template language in their documentation here:
-
-https://gohugo.io/templates/overview/
-
-The most useful page there is the one about the available functions:
-
-https://gohugo.io/templates/functions/
-
-For assets that are completely static and don't need to go through the asset pipeline,
-use the `site/static` folder. Images, font-files, etc, all go there.
-
-Files in the static folder end up in the web root. So a file called `site/static/favicon.ico`
-will end up being available as `/favicon.ico` and so on...
-
-The `src/js/app.js` file is the entrypoint for webpack and will be built to `/dist/app.js`.
-
-You can use **ES6** and use both relative imports or import libraries from npm.
-
-Any CSS file directly under the `src/css/` folder will get compiled with [PostCSS Next](http://cssnext.io/)
-to `/dist/css/{filename}.css`. Import statements will be resolved as part of the build.
-
-## Environment variables
-
-To separate the development and production *- aka build -* stages, all gulp tasks run with a node environment variable named either `development` or `production`.
-
-You can access the environment variable inside the theme files with `getenv "NODE_ENV"`. See the following example for a conditional statement:
-
-    {{ if eq (getenv "NODE_ENV") "development" }}You're in development!{{ end }}
-
-All tasks starting with *build* set the environment variable to `production` - the other will set it to `development`.
-
-## Deploying to Netlify
-
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now Netlify will build and deploy your site whenever you push to git.
-
-You can also click this button:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/victor-hugo)
-
-
-## Enjoy!! 😸
+[Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
